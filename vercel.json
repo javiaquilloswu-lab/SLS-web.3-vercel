@@ -1,0 +1,16 @@
+﻿{
+  "version": 2,
+  "framework": null,
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.4",
+      "includeFiles": "android_api/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/:endpoint",
+      "destination": "/api/index.php?endpoint=:endpoint"
+    }
+  ]
+}
