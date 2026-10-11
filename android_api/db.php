@@ -28,7 +28,7 @@ $user = getenv('DB_USER') ?: ($_ENV['DB_USER'] ?? 'postgres');
 $pass = getenv('DB_PASSWORD') ?: ($_ENV['DB_PASSWORD'] ?? 'root');
 
 try {
-    $dsn = "pgsql:host={$host};port={$port};dbname={$db};options='--client_encoding=UTF8'";
+    $dsn = "pgsql:host={$host};port={$port};dbname={$db};sslmode=require;options='--client_encoding=UTF8'";
 
     $pdo = new PDO($dsn, $user, $pass, [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,

@@ -17,3 +17,4 @@ api/android_api/uploaded_files/
 *.sql.gz
 *.backup
 *.dump
+.vercel
