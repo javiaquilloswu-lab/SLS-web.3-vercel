@@ -1,17 +1,18 @@
-﻿{
+{
+  "version": 2,
   "functions": {
     "api/index.php": {
       "runtime": "vercel-php@0.7.4"
     }
   },
-  "routes": [
+  "rewrites": [
     {
-      "src": "^/api/health$",
-      "dest": "/api/index.php?endpoint=health"
+      "source": "/api/health",
+      "destination": "/api/index.php?endpoint=health"
     },
     {
-      "src": "^/api/([a-zA-Z0-9_]+)(?:\\.php)?$",
-      "dest": "/api/index.php?endpoint=$1"
+      "source": "/api/:endpoint",
+      "destination": "/api/index.php?endpoint=:endpoint"
     }
   ]
 }
